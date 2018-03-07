@@ -4,7 +4,15 @@ using System.Text;
 
 namespace Project4
 {
-    class Kruskal
+    static class Kruskal
     {
+        static public void runKruskal()
+        {
+
+        }
+        static private bool AreWeDone()
+        {
+            return true;
+        }
     }
 }
