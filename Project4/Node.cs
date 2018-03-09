@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Project: Project4, Kruskal and Prim Algorithms
+ * Organization: SIUE CS 340-001 SP18
+ * Project Due: 12/03/2018
+ * Programmer: Jacob Grubb
+ * File: Node.cs
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
