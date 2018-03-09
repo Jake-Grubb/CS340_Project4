@@ -10,6 +10,17 @@ namespace Project4
         private List<Edge> myEdgeList = new List<Edge>();
         private string title;
 
+        public static Node getNodeByName(string name)
+        {
+            foreach (Node entry in nodeList)
+            {
+                if(String.Compare(entry.getTitle(), name) == 0)
+                {
+                    return entry;
+                }
+            }
+            return null;
+        }
         public Node(string newTitle)
         {
             this.title = newTitle;
@@ -19,6 +30,10 @@ namespace Project4
         public void addEdge(Node targetNode, int weight)
         {
             this.myEdgeList.Add(new Edge(this, targetNode, weight));
+        }
+        public string getTitle()
+        {
+            return this.title;
         }
     }
 }
