@@ -6,5 +6,6 @@ namespace Project4
 {
     class Node
     {
+        Edge[] edgeList;
     }
 }
