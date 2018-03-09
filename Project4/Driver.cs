@@ -12,6 +12,7 @@ namespace Project4
         {
             string[] inputArray = ReadFile(inputFileName);
             loadTree(inputArray);
+            Console.ReadLine();
         }
 
         static string[] ReadFile(string fileName)
@@ -36,7 +37,18 @@ namespace Project4
             {
                 splitByWord[i] = inArr[i].Split(" ");
             }
-
+            foreach (string[] entry in splitByWord)
+            {
+                Node temp = new Node(entry[0].Substring(0, 1));
+            }
+            foreach (string[] entry in splitByWord)
+            {
+                Node curr = Node.getNodeByName(entry[0].Substring(0, 1));
+                for (int i = 0; i < (entry.Length - 1) / 2; i++)
+                {
+                    curr.addEdge(Node.getNodeByName(entry[i + 1]), Convert.ToInt32(entry[i + 2]));
+                }
+            }
         }
 
         static void runKruskal()
