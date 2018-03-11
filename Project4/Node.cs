@@ -15,6 +15,7 @@ namespace Project4
         public static List<Node> nodeList = new List<Node>();
         private List<Edge> myEdgeList = new List<Edge>();
         private string title;
+        private Node parent;
 
         public static Node getNodeByName(string name)
         {
@@ -31,6 +32,7 @@ namespace Project4
         {
             this.title = newTitle;
             nodeList.Add(this);
+            this.parent = this;
         }
 
         public void addEdge(Node targetNode, int weight)
@@ -40,6 +42,16 @@ namespace Project4
         public string getTitle()
         {
             return this.title;
+        }
+
+        public void setParent(Node newParent)
+        {
+            this.parent = newParent;
+        }
+
+        public Node getParent()
+        {
+            return this.parent;
         }
     }
 }

@@ -55,6 +55,10 @@ namespace Project4
                     curr.addEdge(Node.getNodeByName(entry[i + 1]), Convert.ToInt32(entry[i + 2])); //We create new edges.
                 }
             }
+            foreach(Edge entry in Edge.edgeList)
+            {
+                Console.WriteLine(entry.WeightedToString());
+            }
         }
 
         static void runKruskal()

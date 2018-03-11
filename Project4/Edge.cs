@@ -88,5 +88,15 @@ namespace Project4
             hashCode = hashCode * -1521134295 + EqualityComparer<Node>.Default.GetHashCode(endNode);
             return hashCode;
         }
+
+        public override string ToString()
+        {
+            return (this.startNode.getTitle() + " " + this.endNode.getTitle());
+        }
+
+        public string WeightedToString()
+        {
+            return (this.startNode.getTitle() + " to " + this.endNode.getTitle() + " with weight of " + this.weight);
+        }
     }
 }
