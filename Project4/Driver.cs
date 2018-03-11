@@ -50,9 +50,13 @@ namespace Project4
             foreach (string[] entry in splitByWord)
             {
                 Node curr = Node.getNodeByName(entry[0].Substring(0, 1)); //Next, we create the necessary edges
-                for (int i = 0; i < (entry.Length - 1) / 2; i++) //This calculation determines how many edges per node
+                if(entry.Length == 1)
                 {
-                    curr.addEdge(Node.getNodeByName(entry[i + 1]), Convert.ToInt32(entry[i + 2])); //We create new edges.
+                    continue;
+                }
+                for (int i = 1; i < entry.Length - 1; i = i + 2) //This calculation determines how many edges per node
+                {
+                    curr.addEdge(Node.getNodeByName(entry[i]), Convert.ToInt32(entry[i + 1])); //We create new edges.
                 }
             }
             foreach(Edge entry in Edge.edgeList)
