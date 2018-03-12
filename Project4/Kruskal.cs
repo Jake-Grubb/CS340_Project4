@@ -12,6 +12,14 @@ namespace Project4
         }
         static private bool AreWeDone()
         {
+            Node testCase = Node.nodeList[0].getParent();
+            foreach (Node entry in Node.nodeList)
+            {
+                if(entry.getParent() != testCase)
+                {
+                    return false;
+                }
+            }
             return true;
         }
     }

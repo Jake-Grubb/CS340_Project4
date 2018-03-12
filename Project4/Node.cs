@@ -53,5 +53,23 @@ namespace Project4
         {
             return this.parent;
         }
+
+        public static bool operator ==(Node node1, Node node2)
+        {
+            return String.Compare(node1.title, node2.title) == 0;
+        }
+
+        public static bool operator !=(Node node1, Node node2)
+        {
+            return !(node1 == node2);
+        }
+
+        public static void resetNodes()
+        {
+            foreach (Node entry in Node.nodeList)
+            {
+                entry.setParent(entry);
+            }
+        }
     }
 }
