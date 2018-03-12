@@ -18,6 +18,7 @@ namespace Project4
         {
             string[] inputArray = ReadFile(inputFileName);
             loadTree(inputArray);
+            runKruskal();
             Console.ReadLine();
         }
 
@@ -59,19 +60,22 @@ namespace Project4
                     curr.addEdge(Node.getNodeByName(entry[i]), Convert.ToInt32(entry[i + 1])); //We create new edges.
                 }
             }
-            foreach(Edge entry in Edge.edgeList)
+            
+        }
+
+        static void runKruskal()
+        {
+            Kruskal.runKruskal();
+            Console.WriteLine("Post: ");
+            foreach (Edge entry in Edge.edgeList)
             {
                 Console.WriteLine(entry.WeightedToString());
             }
         }
 
-        static void runKruskal()
-        {
-            runKruskal();
-        }
-
         static void runPrim()
         {
+            Node.resetNodes();
             runPrim();
         }
     }
